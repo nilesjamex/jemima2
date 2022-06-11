@@ -4,68 +4,32 @@
             <div class="main--sliderContainer">
                 <div class="slider--container">
                     <div class="test">
-                        <h3>
-                            Jemima Osunde
-                        </h3>
-                        <img src="@/assets/dot.svg" alt="arrow">
+                        <img src="@/assets/movielist/lionheart.svg" alt="arrow">
                     </div>
                     <div class="test">
-                        <h3>
-                            Actor
-                        </h3>
-                        <img src="@/assets/dot.svg" alt="arrow">
+                        <img src="@/assets/movielist/mwi.svg" alt="arrow">
                     </div>
                     <div class="test">
-                        <h3>
-                            Model
-                        </h3>
-                        <img src="@/assets/dot.svg" alt="arrow">
+                        <img src="@/assets/movielist/feelgood.svg" alt="arrow">
                     </div>
                     <div class="test">
-                        <h3>
-                            Presenter
-                        </h3>
-                        <img src="@/assets/dot.svg" alt="arrow">
-                    </div>
-                    <div class="test">
-                        <h3>
-                            Physiotherapist
-                        </h3>
-                        <img src="@/assets/dot.svg" alt="arrow">
+                        <img src="@/assets/movielist/nm.svg" alt="arrow">
                     </div>
                 </div>
             </div>
             <div class="main--sliderContainer2">
                 <div class="slider--container">
                     <div class="test">
-                        <h3>
-                            Jemima Osunde
-                        </h3>
-                        <img src="@/assets/dot.svg" alt="arrow">
+                        <img src="@/assets/movielist/rhi.svg" alt="arrow">
                     </div>
                     <div class="test">
-                        <h3>
-                            Actor
-                        </h3>
-                        <img src="@/assets/dot.svg" alt="arrow">
+                        <img src="@/assets/movielist/nm.svg" alt="arrow">
                     </div>
                     <div class="test">
-                        <h3>
-                            Model
-                        </h3>
-                        <img src="@/assets/dot.svg" alt="arrow">
+                        <img src="@/assets/movielist/feelgood.svg" alt="arrow">
                     </div>
                     <div class="test">
-                        <h3>
-                            Presenter
-                        </h3>
-                        <img src="@/assets/dot.svg" alt="arrow">
-                    </div>
-                    <div class="test">
-                        <h3>
-                            Physiotherapist
-                        </h3>
-                        <img src="@/assets/dot.svg" alt="arrow">
+                        <img src="@/assets/movielist/mwi.svg" alt="arrow">
                     </div>
                 </div>
             </div>
@@ -94,7 +58,7 @@ export default {
         flex-shrink: 0;
         gap: 1.2rem;
         animation: infinityScroll 20s linear infinite;
-        transition: animation 10s ease-in-out;
+        transition: animation 4s ease-in-out;
         @include flex();
     }
 
@@ -117,7 +81,7 @@ export default {
     }
 
     100% {
-        transform: translate3d(-165%, 0, 0);
+        transform: translate3d(-30%, 0, 0);
     }
 }
 .main--sliderContainer2 {
@@ -126,12 +90,12 @@ export default {
     gap: 1rem;
     overflow: hidden;
     flex-shrink: 0;
-
+    margin-top: 2.5rem;
     .slider--container {
         flex-shrink: 0;
         gap: 1.2rem;
         animation: infinityScroll2 20s linear infinite;
-        transition: animation 10s ease-in-out;
+        transition: animation 4s ease-in-out;
         @include flex(flex-end,);
     }
 
@@ -154,7 +118,7 @@ export default {
     }
 
     100% {
-        transform: translate3d(165%, 0, 0);
+        transform: translate3d(30%, 0, 0);
     }
 }
 </style>

@@ -9,7 +9,8 @@
                 <img src="@/assets/arrow.svg" alt="arrow">
             </div>
             <div class="main--sliderContainer">
-                <div class="slider--container">
+                <!-- <MarqueeText> -->
+                    <div class="slider--container">
                     <div class="test">
                         <h3>
                             Jemima Osunde
@@ -40,7 +41,8 @@
                         </h3>
                         <img src="@/assets/dot.svg" alt="arrow">
                     </div>
-                </div>
+                    </div>
+                <!-- </MarqueeText> -->
             </div>
         </div>
     </section>
@@ -48,16 +50,16 @@
 
 <script>
 import { gsap } from 'gsap';
+import MarqueeText from 'vue-marquee-text-component';
 export default {
+    components: {
+        MarqueeText
+    },
     mounted() {
         console.log('comming')
-        // gsap.to('.intro', {
-        //     duration: 1.5,
-        //         css: {
-        //             scaleX: 1.1
-        //         }
-            
-        // })
+        const element = document.querySelector('.main--sliderContainer');
+        const element2 = document.querySelector('.slider--container');
+        element.appendChild(element2)
     },
     data() {
         return {
@@ -131,8 +133,7 @@ export default {
     .slider--container {
         flex-shrink: 0;
         gap: 1.2rem;
-        animation: infinityScroll 20s linear infinite;
-        transition: animation 10s ease-in-out;
+        animation: infinityScroll 9s linear infinite;
         @include flex();
     }
 
@@ -151,11 +152,11 @@ export default {
 
 @keyframes infinityScroll {
     0% {
-        transform: translate3d(0, 0, 0);
+        transform: translateX(0%);
     }
 
     100% {
-        transform: translate3d(-165%, 0, 0);
+        transform: translateX(-195%);
     }
 }
 </style>
