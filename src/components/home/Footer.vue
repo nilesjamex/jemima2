@@ -38,7 +38,9 @@
                   <div class="line"></div>
               </div>
               <div class="social--mail--rounded">
-                  <h5>Credits</h5>
+                  <h5>
+                      <router-link to="/credit">Credits</router-link>
+                      </h5>
               </div>
           </div>
       </div>
