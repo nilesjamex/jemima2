@@ -57,10 +57,10 @@
 }
 @mixin socials {  
     font-family: 'Inter', sans-serif;
-font-style: normal;
-font-weight: 400;
-font-size: 24px;
-line-height: 29px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
     @content;
 }
 @mixin credits {  
@@ -74,5 +74,13 @@ line-height: 29px;
     font-size: 24px;
     font-weight: 400;
     line-height: 30px;
+    @content;
+}
+@mixin about {
+    font-family: 'Commissioner', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 39px;
     @content;
 }
