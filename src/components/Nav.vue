@@ -17,7 +17,7 @@ export default {
 @import '@/styles/mixin';
 nav {
     height: 6vh;
-    background-color: #2c2c2c;
+    background-color: transparent;
     padding: 0.1rem 3%;
     @include flex(flex-end, center)
 }
@@ -26,8 +26,8 @@ nav {
     cursor: pointer;
     .line {
         width: 39px;
-        height: 2px;
-        background-color: white;
+        height: 3px;
+        background-color: #ffffff;
         margin: 0.2rem 0;
     }
 }
