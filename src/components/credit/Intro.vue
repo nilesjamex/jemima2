@@ -1,6 +1,10 @@
 <template>
 <section class="intro">
     <div class="intro--box">
+        <div class="intro--intro">
+              <h5>Credits</h5>
+              <div class="line"></div>
+          </div>
         <div class="intro--credit--container">
             <div class="intro--credit">
                 <h4>WHO MADE THIS SITE?</h4>
@@ -50,7 +54,7 @@
         <div class="link">
             <div class="link--rounded">
                   <h5>
-                      <router-link to="/">Credits</router-link>
+                      <router-link to="/about">About</router-link>
                       </h5>
               </div>
         </div>
@@ -60,7 +64,9 @@
 
 <script>
 export default {
-
+    mounted() {
+        window.scrollTo(0,0)
+    }
 }
 </script>
 
@@ -68,7 +74,19 @@ export default {
 @import '@/styles/mixin';
 @import '@/styles/typography';
 .intro {
-    padding: 4rem 7%;
+    padding: 1rem 7%;
+}
+.intro--intro {
+    h5 {
+        @include film {
+            color: #000000
+        }
+    }
+    .line {
+        width: 100%;
+        border: 1px solid #000000;
+        margin: 2rem 0;
+    }
 }
 .intro--credit--container {
     display: grid;
