@@ -44,7 +44,7 @@ export default {
       return {
         /*eslint no-octal: 2*/
         counter: 0,
-        true: true,
+        true: this.$store.state.true,
         show: true
       }
     },
@@ -62,18 +62,29 @@ export default {
             y: "-100%",
             delay: 0.7
         })
+      },
+      changeState() {
+        this.true = this.$store.state.replaceState({state: {
+         true: false
+       }})
       }
+    },
+    computed: {
+       count() {
+         return this.$store.state.true
+       }
     },
     mounted() {
     window.scrollTo(0,0)
-    window.sessionStorage.setItem('doNotShow', 'true')
+  //   window.sessionStorage.setItem('doNotShow', 'true')
    console.log(this.true)
     const loaderTimer = setInterval(() => {
       this.counter++;
       if(this.counter === 100) {
         clearInterval(loaderTimer);
         window.sessionStorage.setItem('doNotShow', 'false')
-       this.true = window.sessionStorage.getItem('doNotShow')
+        const meh = window.sessionStorage.getItem('doNotShow')
+        this.changeState()
        console.log(this.true)
         this.slider()
       }
