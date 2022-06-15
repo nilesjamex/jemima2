@@ -11,9 +11,9 @@
           </div>
           <div class="works--list">
               <div class="line1"></div>
-              <div class="works--list--container">
+              <div ref="container" class="works--list--container">
               <div  v-for="details in movieDetails" :key="details.id" class="works--list--items--container">
-              <div @mouseover="handleEnter(details.id)" @mouseout="handleLeave()" class="works--list--items">
+              <div @mouseenter="handleEnter(details.id, $event)" @mouseover="handleOver" @mouseleave="handleLeave()" class="works--list--items">
                   <h2>
                       {{details.name}}
                   </h2>
@@ -24,8 +24,12 @@
               </div>
               <div class="line1"></div>
               </div>
-              <div v-for="images in movieDetails" :key="images.id" class="works--list--image--container">
-              <div v-if="steps === images.id"><img :class="{imghide: showImg }" id="image" class="movie--image" :src="require(`@/assets/${images.img}`)" alt=""></div>
+              <div v-for="images in movieDetails" :key="images.id" class="works--list--image--container images">
+              <div 
+              v-if="steps === images.id">
+              <img :class="{imghide: showImg}" 
+              :style="{right: mousePosition.y + '%', top: mousePosition.x + '%'}" 
+              id="image" class="movie--image" :src="require(`@/assets/${images.img}`)" alt=""></div>
               </div>
               </div>
           </div>
@@ -40,6 +44,10 @@ export default {
         return {
             steps: 1,
             showImg: true,
+            mousePosition: {
+                x: 70,
+                y: 30
+            },
             movieDetails: [
             {
                 id: 1,
@@ -74,26 +82,34 @@ export default {
     },
     methods: {
         slideUp() {
-            gsap.to('#image', {
+            gsap.from('.images', {
                 duration: 1,
                 y: 0,
-                opacity: 0
+                opacity: 1
             })
         },
-        handleEnter(number) {
+        mounted(event) {
+            console.log(event)
+        },
+        handleEnter(number, event) {
             this.movieDetails.map((movie) => {
                 if(movie.id === number) {
                     this.steps = number
                 }
             })
             this.showImg = !this.showImg
-            ths.slideUp()
+            // this.slideUp()
         },
          handleLeave() {
             this.showImg = !this.showImg
             this.steps = null
                 
-        }
+        },
+        handleOver(event) {
+            console.log(event);
+                // this.mousePosition.x = event.clientY
+                // this.mousePosition.y = event.clientX
+        },
     }
 }
 </script>
@@ -187,8 +203,7 @@ export default {
 }
 .movie--image {
     position: absolute;
-    top: -20%;
-    right: 5%;
+    
     width: 400px;
     height: 450px;
 }

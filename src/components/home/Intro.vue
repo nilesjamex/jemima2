@@ -1,5 +1,6 @@
 <template>
     <section class="intro">
+        <Nav />
         <div class="intro--box">
             <div class="height"></div>
             <div class="intro--text">
@@ -37,12 +38,42 @@
                     </div>
                     <div class="test">
                         <h3>
-                            Physiotherapist
+                            Physiotherapist &nbsp;
                         </h3>
-                        <img src="@/assets/dot.svg" alt="arrow">
                     </div>
                     </div>
                 <!-- </MarqueeText> -->
+                 <!-- <div class="slider--container2">
+                    <div class="test">
+                        <h3>
+                           &nbsp; Jemima Osunde
+                        </h3>
+                        <img src="@/assets/dot.svg" alt="arrow">
+                    </div>
+                    <div class="test">
+                        <h3>
+                            Actor
+                        </h3>
+                        <img src="@/assets/dot.svg" alt="arrow">
+                    </div>
+                    <div class="test">
+                        <h3>
+                            Model
+                        </h3>
+                        <img src="@/assets/dot.svg" alt="arrow">
+                    </div>
+                    <div class="test">
+                        <h3>
+                            Presenter
+                        </h3>
+                        <img src="@/assets/dot.svg" alt="arrow">
+                    </div>
+                    <div class="test">
+                        <h3>
+                            Physiotherapist
+                        </h3>
+                    </div>
+                    </div> -->
             </div>
         </div>
     </section>
@@ -50,48 +81,18 @@
 
 <script>
 import { gsap } from 'gsap';
+import Nav from '@/components/Nav.vue'
 import MarqueeText from 'vue-marquee-text-component';
 export default {
     components: {
-        MarqueeText
+        MarqueeText,
+        Nav
     },
     mounted() {
         console.log('comming')
-        const element = document.querySelector('.main--sliderContainer');
-        const element2 = document.querySelector('.slider--container');
-        element.appendChild(element2)
+
     },
-    data() {
-        return {
-            description: [
-                {
-                    id: 1,
-                    name: 'Jemima Osunde',
-                    img: 'dot.svg'
-                },
-                {
-                    id: 2,
-                    name: 'Actor',
-                    img: 'dot.svg'
-                },
-                {
-                    id: 3,
-                    name: 'Model',
-                    img: 'dot.svg'
-                },
-                {
-                    id: 4,
-                    name: 'Presenter',
-                    img: 'dot.svg'
-                },
-                {
-                    id: 5,
-                    name: 'Physiotherapist',
-                    img: 'dot.svg'
-                }
-            ]
-        }
-    }
+   
 }
 </script>
 
@@ -107,7 +108,7 @@ export default {
     background-image: url('@/assets/jemima-bg.svg');
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 3rem 0;
+    padding: 1rem 0;
     overflow: hidden;
 }
 
@@ -129,11 +130,18 @@ export default {
     gap: 1rem;
     overflow: hidden;
     flex-shrink: 0;
+    width: 100%;
 
     .slider--container {
         flex-shrink: 0;
         gap: 1.2rem;
-        animation: infinityScroll 9s linear infinite;
+        animation: infinityScroll 20s linear infinite;
+        @include flex();
+    }
+    .slider--container2 {
+        flex-shrink: 0;
+        gap: 1.2rem;
+        animation: infinityScroll2 19s linear infinite;
         @include flex();
     }
 
@@ -152,11 +160,20 @@ export default {
 
 @keyframes infinityScroll {
     0% {
-        transform: translateX(0%);
+        transform: translateX(100%);
     }
 
     100% {
-        transform: translateX(-195%);
+        transform: translateX(-230%);
+    }
+}
+@keyframes infinityScroll2 {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-230%);
     }
 }
 </style>
