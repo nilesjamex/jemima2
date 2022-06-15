@@ -1,24 +1,23 @@
 <template>
-<div>
-  <router-view v-slot="{ Component }">
-    <transition name="route" mode="in-out">
-      <div>
-      <component :is="Component" />
-      </div>
-    </transition>
- </router-view> 
-</div>
+  <div>
+    <router-view v-slot="{ Component }">
+      <transition name="route" mode="in-out">
+        <div>
+          <component :is="Component" />
+        </div>
+      </transition>
+    </router-view>
+  </div>
 </template>
 <script>
 export default {
   mounted() {
-    window.scrollTo(0,0)
-  }
-}
+    window.scrollTo(0, 0);
+  },
+};
 </script>
 
 <style scoped>
-
 /* .route-enter-from {
   opacity: 0;
   transform: translateX(100px)

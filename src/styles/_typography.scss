@@ -1,86 +1,86 @@
 @mixin about {
-    font-family: 'Manrope', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 38px;
-    @content;
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 38px;
+  @content;
 }
 @mixin intro {
-    font-family: 'Cabinet Grotesk', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 144px;
-    line-height: 179px;
-    @content;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 144px;
+  line-height: 179px;
+  @content;
 }
 @mixin film {
-    font-family: 'Commissioner', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    @content;
+  font-family: "Commissioner", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  @content;
 }
 @mixin title {
-    font-family: 'Cabinet Grotesk', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 110px;
-    line-height: 136px;
-    @content;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 110px;
+  line-height: 136px;
+  @content;
 }
 @mixin movie {
-    font-family: 'Cabinet Grotesk', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 0.01em;
-    @content;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  @content;
 }
 @mixin year {
-    font-family: 'Manrope', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 56px;
-    line-height: 76px;
-    @content;
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 56px;
+  line-height: 76px;
+  @content;
 }
-@mixin awards {  
-    font-family: 'Cabinet Grotesk', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 64px;
-    line-height: 80px;
-    @content;
+@mixin awards {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 80px;
+  @content;
 }
-@mixin socials {  
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 29px;
-    @content;
+@mixin socials {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  @content;
 }
-@mixin credits {  
-    font-family: 'Cabinet Grotesk', sans-serif;
-    font-size: 24px;
-    line-height: 30px;
-    @content;
+@mixin credits {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 24px;
+  line-height: 30px;
+  @content;
 }
-@mixin credits2 {  
-    font-family: 'Cabinet Grotesk', sans-serif;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 30px;
-    @content;
+@mixin credits2 {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 30px;
+  @content;
 }
 @mixin about {
-    font-family: 'Commissioner', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 39px;
-    @content;
+  font-family: "Commissioner", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 39px;
+  @content;
 }

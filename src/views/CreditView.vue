@@ -4,12 +4,12 @@
 
 <script>
 // @ is an alias to /src
-import Credit from '@/components/credit/Index.vue'
+import Credit from "@/components/credit/Index.vue";
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
-    Credit
-  }
-}
+    Credit,
+  },
+};
 </script>
