@@ -1,34 +1,32 @@
 <template>
   <nav>
-      <div class="block">
-          <div class="line"></div>
-          <div class="line"></div>
-      </div>
+    <div class="block">
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
   </nav>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style lang="scss" scoped>
-@import '@/styles/mixin';
+@import "@/styles/mixin";
 nav {
-    height: 6vh;
-    background-color: transparent;
-    padding: 0.1rem 3%;
-    @include flex(flex-end, center)
+  height: 6vh;
+  background-color: transparent;
+  padding: 0.1rem 3%;
+  @include flex(flex-end, center);
 }
 .block {
-    display: block;
-    cursor: pointer;
-    .line {
-        width: 39px;
-        height: 3px;
-        background-color: #000000;
-        margin: 0.2rem 0;
-    }
+  display: block;
+  cursor: pointer;
+  .line {
+    width: 39px;
+    height: 3px;
+    background-color: #000000;
+    margin: 0.2rem 0;
+  }
 }
 </style>

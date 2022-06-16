@@ -3,14 +3,12 @@
 </template>
 
 <script>
-import About from '@/components/about/Index.vue'
+import About from "@/components/about/Index.vue";
 export default {
-    components: {
-        About
-    }
-}
+  components: {
+    About,
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
