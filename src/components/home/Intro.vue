@@ -46,7 +46,8 @@
             <img src="@/assets/dot.svg" alt="arrow" />
           </div>
           <div class="test">
-            <h3>Physiotherapist &nbsp;</h3>
+            <h3>Physiotherapist</h3>
+            <img src="@/assets/dot.svg" alt="arrow" />
           </div>
         </div>
         <!-- </MarqueeText> -->
@@ -96,7 +97,7 @@ export default {
     Nav,
   },
   mounted() {
-    console.log("comming");
+    
   },
 };
 </script>
@@ -166,7 +167,7 @@ export default {
 
 @keyframes infinityScroll {
   100% {
-    transform: translate3d(-258%, 0, 0);
+    transform: translate3d(-272%, 0, 0);
   }
 }
 @keyframes infinityScroll2 {
