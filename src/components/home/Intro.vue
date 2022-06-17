@@ -29,6 +29,25 @@
           <div class="test">
             <h3>Physiotherapist &nbsp;</h3>
           </div>
+          <div class="test">
+            <h3>Jemima Osunde</h3>
+            <img src="@/assets/dot.svg" alt="arrow" />
+          </div>
+          <div class="test">
+            <h3>Actor</h3>
+            <img src="@/assets/dot.svg" alt="arrow" />
+          </div>
+          <div class="test">
+            <h3>Model</h3>
+            <img src="@/assets/dot.svg" alt="arrow" />
+          </div>
+          <div class="test">
+            <h3>Presenter</h3>
+            <img src="@/assets/dot.svg" alt="arrow" />
+          </div>
+          <div class="test">
+            <h3>Physiotherapist &nbsp;</h3>
+          </div>
         </div>
         <!-- </MarqueeText> -->
         <!-- <div class="slider--container2">
@@ -121,15 +140,16 @@ export default {
   .slider--container {
     flex-shrink: 0;
     gap: 1.2rem;
-    animation: infinityScroll 20s linear infinite;
+   animation: infinityScroll 25s linear 0s infinite forwards;
+    transition: animation linear 20s;
     @include flex();
   }
-  .slider--container2 {
-    flex-shrink: 0;
-    gap: 1.2rem;
-    animation: infinityScroll2 19s linear infinite;
-    @include flex();
-  }
+  // .slider--container2 {
+  //   flex-shrink: 0;
+  //   gap: 1.2rem;
+  //   animation: infinityScroll2 19s linear infinite;
+  //   @include flex();
+  // }
 
   .test {
     flex-shrink: 0;
@@ -145,13 +165,9 @@ export default {
 }
 
 @keyframes infinityScroll {
-  0% {
-    transform: translateX(100%);
-  }
-
-  100% {
-    transform: translateX(-230%);
-  }
+    100% {
+          transform: translate3d(-258%, 0, 0);
+     }
 }
 @keyframes infinityScroll2 {
   0% {
