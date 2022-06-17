@@ -140,7 +140,7 @@ export default {
   .slider--container {
     flex-shrink: 0;
     gap: 1.2rem;
-   animation: infinityScroll 25s linear 0s infinite forwards;
+    animation: infinityScroll 25s linear 0s infinite forwards;
     transition: animation linear 20s;
     @include flex();
   }
@@ -165,9 +165,9 @@ export default {
 }
 
 @keyframes infinityScroll {
-    100% {
-          transform: translate3d(-258%, 0, 0);
-     }
+  100% {
+    transform: translate3d(-258%, 0, 0);
+  }
 }
 @keyframes infinityScroll2 {
   0% {
