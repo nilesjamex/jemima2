@@ -9,18 +9,16 @@
       </div>
       <div class="works--list">
         <div class="line1"></div>
-        <div ref="container" class="works--list--container">
+        <div ref="container" @mouseover="showCont" class="works--list--container">
+          <div class="img_cont">
+
+          </div>
           <div
             v-for="details in movieDetails"
             :key="details.id"
             class="works--list--items--container"
           >
-            <div
-              @mouseenter="handleEnter(details.id, $event)"
-              @mouseover="handleOver"
-              @mouseleave="handleLeave()"
-              class="works--list--items"
-            >
+            <div @mouseenter="showImg(details)" class="works--list--items">
               <h2>
                 {{ details.name }}
               </h2>
@@ -31,111 +29,44 @@
             </div>
             <div class="line1"></div>
           </div>
-          <div
-            v-for="images in movieDetails"
-            :key="images.id"
-            class="works--list--image--container images"
-            ref="image"
-          >
-            <div v-if="steps === images.id">
-              <img
-                :class="{ imghide: showImg }"
-                :style="{
-                  right: mousePosition.y + '%',
-                  top: mousePosition.x + '%',
-                }"
-                id="image"
-                class="movie--image"
-                :src="require(`@/assets/${images.img}`)"
-                alt=""
-              />
-            </div>
-          </div>
         </div>
       </div>
     </div>
   </section>
 </template>
 
-<script>
-import { gsap } from "gsap";
-export default {
-  data() {
-    return {
-      steps: 1,
-      showImg: true,
-      mousePosition: {
-        x: 70,
-        y: 30,
-      },
-      movieDetails: [
-        {
-          id: 1,
-          name: "Quam’s Money",
-          year: 2020,
-          type: "Movie",
-          img: "quam.svg",
-        },
-        {
-          id: 2,
-          name: "Lionheart",
-          year: 2019,
-          type: "Movie",
-          img: "lionheart.svg",
-        },
-        {
-          id: 3,
-          name: "Rumor Has It",
-          year: "2016 - 2018",
-          type: "TV Show",
-          img: "rhi.svg",
-        },
-        {
-          id: 4,
-          name: "Shuga",
-          year: "2015 - 2020",
-          type: "TV Show",
-          img: "shuga.svg",
-        },
-      ],
-    };
-  },
-  methods: {
-    slideUp() {
-      gsap.from(".images", {
-        duration: 1,
-        y: 0,
-        opacity: 1,
-      });
+<script setup>
+import movieDetails from "@/db/works.json";
+import gsap from "gsap";
+
+const showImg =(data)=>{
+   console.log(data)
+}
+
+const showCont = ()=>{
+window.addEventListener("mouseover", (e)=>{
+  gsap.to(".img_cont", {
+    css:{
+      left: e.pageX,
+      top: e.pageY,
+      duration: 10
     },
-    mounted(event) {
-      console.log(event);
-    },
-    handleEnter(number, event) {
-      this.movieDetails.map((movie) => {
-        if (movie.id === number) {
-          this.steps = number;
-        }
-      });
-      this.showImg = !this.showImg;
-      // this.slideUp()
-    },
-    handleLeave() {
-      this.showImg = !this.showImg;
-      this.steps = null;
-    },
-    handleOver(event) {
-      console.log(this.$refs.image);
-      // this.mousePosition.x = event.clientY
-      // this.mousePosition.y = event.clientX
-    },
-  },
-};
+    duration:5
+   })
+})
+}
 </script>
 
 <style lang="scss" scoped>
 @import "@/styles/mixin";
 @import "@/styles/typography";
+.img_cont{
+    position: absolute;
+    width: 30rem;
+    z-index: 90;
+    height: 25rem;
+    background: grey;
+}
 .works {
   padding: 4rem 3%;
 }
