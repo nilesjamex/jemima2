@@ -143,6 +143,7 @@ export default {
     gap: 1.2rem;
     animation: infinityScroll 25s linear 0s infinite forwards;
     transition: animation linear 20s;
+    animation-delay: 10s;
     @include flex();
   }
   // .slider--container2 {
