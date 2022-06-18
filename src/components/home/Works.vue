@@ -35,6 +35,7 @@
             v-for="images in movieDetails"
             :key="images.id"
             class="works--list--image--container images"
+            ref="image"
           >
             <div v-if="steps === images.id">
               <img
@@ -124,7 +125,7 @@ export default {
       this.steps = null;
     },
     handleOver(event) {
-      console.log(event);
+      console.log(this.$refs.image);
       // this.mousePosition.x = event.clientY
       // this.mousePosition.y = event.clientX
     },
