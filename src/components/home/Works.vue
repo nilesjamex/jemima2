@@ -51,27 +51,32 @@ const showImg = (data) => {
   step.value = data.img;
   gsap.from(".img_cont img", {
     opacity: 0,
+    duration: 0.1,
   });
 };
 const handleleave = () => {
   showImage.value = false;
 };
 
+// Adjust the values of the condition statement to set the limits of the motion of the image
+
 const showCont = (e) => {
   showImage.value = true;
-  if (
-    e.clientX < window.innerWidth / 2 &&
-    e.clientX > window.innerWidth / 4.5
-  ) {
-    gsap.to(".img_cont", {
-      css: {
-        left: 100 + e.offsetX,
-        top: e.offsetY,
-      },
-      ease: Circ.easeOut,
-      duration: 3,
-    });
-  }
+  window.addEventListener("mousemove", (e) => {
+    if (
+      e.clientX < window.innerWidth / 2 &&
+      e.clientX > window.innerWidth / 2.5
+    ) {
+      gsap.to(".img_cont", {
+        css: {
+          left: 100 + e.offsetX,
+          top: -50 + e.offsetY,
+        },
+        ease: Circ.easeOut,
+        duration: 2,
+      });
+    }
+  });
 };
 </script>
 
