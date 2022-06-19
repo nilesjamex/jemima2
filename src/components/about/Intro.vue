@@ -38,7 +38,7 @@
         <div class="intro--content--link">
           <div class="link--rounded">
             <h5>
-              <router-link to="/">About</router-link>
+              <router-link to="/">Home</router-link>
             </h5>
           </div>
         </div>

@@ -111,7 +111,7 @@ export default {
 }
 .intro {
   height: 1024px;
-  background-image: url("@/assets/jemima-bg.svg");
+  background-image: url("@/assets/home-img.png");
   background-size: cover;
   background-repeat: no-repeat;
   padding: 1rem 0;
@@ -143,6 +143,7 @@ export default {
     gap: 1.2rem;
     animation: infinityScroll 25s linear 0s infinite forwards;
     transition: animation linear 20s;
+    animation-delay: 10s;
     @include flex();
   }
   // .slider--container2 {
