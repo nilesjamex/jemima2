@@ -7,20 +7,22 @@
           More Works <img src="@/assets/arrow-sm.svg" alt="arrow" />
         </button>
       </div>
-      <div class="works--list">
+      <div @mouseleave="handleleave" class="works--list">
         <div class="line1"></div>
-        <div ref="container" class="works--list--container">
+        <div
+          ref="container"
+          @mouseover="showCont"
+          class="works--list--container"
+        >
+          <div v-if="showImage" class="img_cont">
+            <img :src="require(`@/assets/${step}.svg`)" alt="" />
+          </div>
           <div
             v-for="details in movieDetails"
             :key="details.id"
             class="works--list--items--container"
           >
-            <div
-              @mouseenter="handleEnter(details.id, $event)"
-              @mouseover="handleOver"
-              @mouseleave="handleLeave()"
-              class="works--list--items"
-            >
+            <div @mouseenter="showImg(details)" class="works--list--items">
               <h2>
                 {{ details.name }}
               </h2>
@@ -31,111 +33,67 @@
             </div>
             <div class="line1"></div>
           </div>
-          <div
-            v-for="images in movieDetails"
-            :key="images.id"
-            class="works--list--image--container images"
-            ref="image"
-          >
-            <div v-if="steps === images.id">
-              <img
-                :class="{ imghide: showImg }"
-                :style="{
-                  right: mousePosition.y + '%',
-                  top: mousePosition.x + '%',
-                }"
-                id="image"
-                class="movie--image"
-                :src="require(`@/assets/${images.img}`)"
-                alt=""
-              />
-            </div>
-          </div>
         </div>
       </div>
     </div>
   </section>
 </template>
 
-<script>
-import { gsap } from "gsap";
-export default {
-  data() {
-    return {
-      steps: 1,
-      showImg: true,
-      mousePosition: {
-        x: 70,
-        y: 30,
-      },
-      movieDetails: [
-        {
-          id: 1,
-          name: "Quam’s Money",
-          year: 2020,
-          type: "Movie",
-          img: "quam.svg",
+<script setup>
+import movieDetails from "@/db/works.json";
+import { ref } from "@vue/reactivity";
+import { onMounted } from "@vue/runtime-core";
+import { gsap, Circ } from "gsap";
+const showImage = ref(null);
+
+const step = ref("lionheart");
+const showImg = (data) => {
+  step.value = data.img;
+  gsap.from(".img_cont img", {
+    opacity: 0,
+    duration: 0.1,
+  });
+};
+const handleleave = () => {
+  showImage.value = false;
+};
+
+// Adjust the values of the condition statement to set the limits of the motion of the image
+
+const showCont = (e) => {
+  showImage.value = true;
+  window.addEventListener("mousemove", (e) => {
+    if (
+      e.clientX < window.innerWidth / 2 &&
+      e.clientX > window.innerWidth / 2.5
+    ) {
+      gsap.to(".img_cont", {
+        css: {
+          left: 100 + e.offsetX,
+          top: -50 + e.offsetY,
         },
-        {
-          id: 2,
-          name: "Lionheart",
-          year: 2019,
-          type: "Movie",
-          img: "lionheart.svg",
-        },
-        {
-          id: 3,
-          name: "Rumor Has It",
-          year: "2016 - 2018",
-          type: "TV Show",
-          img: "rhi.svg",
-        },
-        {
-          id: 4,
-          name: "Shuga",
-          year: "2015 - 2020",
-          type: "TV Show",
-          img: "shuga.svg",
-        },
-      ],
-    };
-  },
-  methods: {
-    slideUp() {
-      gsap.from(".images", {
-        duration: 1,
-        y: 0,
-        opacity: 1,
+        ease: Circ.easeOut,
+        duration: 2,
       });
-    },
-    mounted(event) {
-      console.log(event);
-    },
-    handleEnter(number, event) {
-      this.movieDetails.map((movie) => {
-        if (movie.id === number) {
-          this.steps = number;
-        }
-      });
-      this.showImg = !this.showImg;
-      // this.slideUp()
-    },
-    handleLeave() {
-      this.showImg = !this.showImg;
-      this.steps = null;
-    },
-    handleOver(event) {
-      console.log(this.$refs.image);
-      // this.mousePosition.x = event.clientY
-      // this.mousePosition.y = event.clientX
-    },
-  },
+    }
+  });
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/styles/mixin";
 @import "@/styles/typography";
+.img_cont {
+  position: absolute;
+  overflow: hidden;
+  width: 30rem;
+  background: rgb(74, 75, 74);
+  z-index: 90;
+  right: 15%;
+  img {
+    width: 100%;
+  }
+}
 .works {
   padding: 4rem 3%;
 }
@@ -204,27 +162,6 @@ export default {
 }
 .works--list--items {
   position: relative;
-}
-.imghide {
-  display: none;
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  right: 10%;
-}
-.imgshow {
-  opacity: 1;
-  display: block;
-  z-index: 3;
-  position: absolute;
-  top: 50%;
-  right: 10%;
-}
-.movie--image {
-  position: absolute;
-
-  width: 400px;
-  height: 450px;
 }
 </style>
 >
