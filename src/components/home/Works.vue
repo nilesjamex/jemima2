@@ -7,11 +7,15 @@
           More Works <img src="@/assets/arrow-sm.svg" alt="arrow" />
         </button>
       </div>
-      <div class="works--list">
+      <div @mouseleave="handleleave" class="works--list">
         <div class="line1"></div>
-        <div ref="container" @mouseover="showCont" class="works--list--container">
-          <div class="img_cont">
-
+        <div
+          ref="container"
+          @mouseover="showCont"
+          class="works--list--container"
+        >
+          <div v-if="showImage" class="img_cont">
+            <img :src="require(`@/assets/${step}.svg`)" alt="" />
           </div>
           <div
             v-for="details in movieDetails"
@@ -37,35 +41,53 @@
 
 <script setup>
 import movieDetails from "@/db/works.json";
-import gsap from "gsap";
+import { ref } from "@vue/reactivity";
+import { onMounted } from "@vue/runtime-core";
+import { gsap, Circ } from "gsap";
+const showImage = ref(null);
 
-const showImg =(data)=>{
-   console.log(data)
-}
+const step = ref("lionheart");
+const showImg = (data) => {
+  step.value = data.img;
+  gsap.from(".img_cont img", {
+    opacity: 0,
+  });
+};
+const handleleave = () => {
+  showImage.value = false;
+};
 
-const showCont = ()=>{
-window.addEventListener("mouseover", (e)=>{
-  gsap.to(".img_cont", {
-    css:{
-      left: e.pageX,
-      top: e.pageY,
-      duration: 10
-    },
-    duration:5
-   })
-})
-}
+const showCont = (e) => {
+  showImage.value = true;
+  if (
+    e.clientX < window.innerWidth / 2 &&
+    e.clientX > window.innerWidth / 4.5
+  ) {
+    gsap.to(".img_cont", {
+      css: {
+        left: 100 + e.offsetX,
+        top: e.offsetY,
+      },
+      ease: Circ.easeOut,
+      duration: 3,
+    });
+  }
+};
 </script>
 
 <style lang="scss" scoped>
 @import "@/styles/mixin";
 @import "@/styles/typography";
-.img_cont{
-    position: absolute;
-    width: 30rem;
-    z-index: 90;
-    height: 25rem;
-    background: grey;
+.img_cont {
+  position: absolute;
+  overflow: hidden;
+  width: 30rem;
+  background: rgb(74, 75, 74);
+  z-index: 90;
+  right: 15%;
+  img {
+    width: 100%;
+  }
 }
 .works {
   padding: 4rem 3%;
@@ -135,27 +157,6 @@ window.addEventListener("mouseover", (e)=>{
 }
 .works--list--items {
   position: relative;
-}
-.imghide {
-  display: none;
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  right: 10%;
-}
-.imgshow {
-  opacity: 1;
-  display: block;
-  z-index: 3;
-  position: absolute;
-  top: 50%;
-  right: 10%;
-}
-.movie--image {
-  position: absolute;
-
-  width: 400px;
-  height: 450px;
 }
 </style>
 >

@@ -4,27 +4,27 @@
         "name": "Quam’s Money",
         "year": 2020,
         "type": "Movie",
-        "img": "quam.svg"
+        "img": "quam"
       },
       {
         "id": 2,
         "name": "Lionheart",
         "year": 2019,
         "type": "Movie",
-        "img": "lionheart.svg"
+        "img": "lionheart"
       },
       {
         "id": 3,
         "name": "Rumor Has It",
         "year": "2016 - 2018",
         "type": "TV Show",
-        "img": "rhi.svg"
+        "img": "rhi"
       },
       {
         "id": 4,
         "name": "Shuga",
         "year": "2015 - 2020",
         "type": "TV Show",
-        "img": "shuga.svg"
+        "img": "shuga"
       }
 ]
