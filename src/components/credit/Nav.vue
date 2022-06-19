@@ -77,6 +77,8 @@ ul {
      div {
     width: 112px;
     height: 112px;
+    transform: translateX(10vh);
+    opacity: 0;
     border: 1.5px solid #000000;
     border-radius: 100px;
     @include flex(center, center);
@@ -103,6 +105,13 @@ ul.active {
       transform: translateX(0);
     transition: all 1.1s ease-out;
     }
+  }
+  .link {
+    div {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 1.2s ease-out;
+  }
   }
 }
 .active {

@@ -6,7 +6,7 @@
 
 <script>
 import Intro from "./Intro.vue";
-import Nav from "./Nav.vue";
+import Nav from "@/components/credit/Nav.vue";
 import { gsap } from "gsap";
 export default {
   components: {
