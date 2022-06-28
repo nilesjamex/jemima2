@@ -65,13 +65,13 @@
 }
 @mixin credits {
   font-family: "Cabinet Grotesk", sans-serif;
-  font-size: 24px;
+  font-size: 16px;
   line-height: 30px;
   @content;
 }
 @mixin credits2 {
   font-family: "Cabinet Grotesk", sans-serif;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 30px;
   @content;

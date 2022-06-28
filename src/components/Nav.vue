@@ -149,4 +149,13 @@ nav {
     background-color: #000000;
   }
 }
+@media screen and (max-width: 600px) {
+  ul {
+  li {
+    @include navtext{
+      font-size: 2rem;
+    }
+  }
+}
+}
 </style>

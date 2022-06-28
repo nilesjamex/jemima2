@@ -70,6 +70,7 @@ export default {
   h5 {
     @include film {
       color: #000000;
+      font-size: 16px;
     }
   }
   .line {
@@ -86,7 +87,7 @@ export default {
 }
 .intro--credit {
   margin-top: 1.3rem;
-  width: 419px;
+  width: min(90%, 419px);
   h4 {
     margin-bottom: 2rem;
     font-weight: 700;
@@ -170,5 +171,15 @@ export default {
       }
     }
   }
+}
+@media screen and (max-width: 900px) {
+  .intro--credit--container {
+     grid-template-columns: repeat(1, 1fr);
+     width: 90%;
+  }
+}
+.link {
+  justify-content: flex-start;
+  margin-top: 2rem;
 }
 </style>

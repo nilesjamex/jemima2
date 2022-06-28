@@ -11,7 +11,7 @@
         <!-- <MarqueeText> -->
         <div class="slider--container">
           <div>
-            <div class="test">
+            <div class="test" style="background-color: red">
               <h3>Jemima Osunde</h3>
               <img src="@/assets/dot.svg" alt="arrow" />
             </div>
@@ -33,7 +33,7 @@
             </div>
           </div>
          <div>
-           <div class="test">
+           <div class="test" style="background-color: blue">
              <h3>Jemima Osunde</h3>
              <img src="@/assets/dot.svg" alt="arrow" />
            </div>
@@ -112,10 +112,10 @@ export default {
 @import "@/styles/typography";
 
 .height {
-  height: 40vh;
+  height: 600px;
 }
 .intro {
-  height: 100vh;
+  height: 1024px;
   background-image: url("@/assets/home-img.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -197,92 +197,4 @@ export default {
     transform: translateX(-230%);
   }
 }
-@media screen and (max-width: 1024px) {
-  .intro {
-    height: 100vh;
-  background-image: url("@/assets/home--m.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 1rem 0;
-  overflow: hidden;
-}
-.height {
-  height: 25vh;
-}
-.slider--container {
-  .test {
-    h3 {
-      @include intro {
-        font-size: 5rem;
-      }
-    }
-  }
-}
-}
-@media screen and (max-width: 450px) {
-  .intro {
-    height: 100vh;
-  background-image: url("@/assets/home--m.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  padding: 1rem 0;
-  overflow: hidden;
-}
-.height {
-  height: 25vh;
-}
-.slider--container {
-  .test {
-    h3 {
-      @include intro {
-        font-size: 5rem;
-      }
-    }
-  }
-}
-}
-// @media screen and (max-width: 924px) {
-//   .intro {
-//   height: 800px;
-//   background-image: url("@/assets/home-img.png");
-//   background-size: contain;
-//   background-repeat: no-repeat;
-//   padding: 1rem 0;
-//   overflow: hidden;
-// }
-// .height {
-//   height: 250px;
-// }
-// .slider--container {
-//   .test {
-//     h3 {
-//       @include intro {
-//         font-size: 5rem;
-//       }
-//     }
-//   }
-// }
-// }
-// @media screen and (max-width: 824px) {
-//   .intro {
-//   height: 500px;
-//   background-image: url("@/assets/home-img.png");
-//   background-size: contain;
-//   background-repeat: no-repeat;
-//   padding: 1rem 0;
-//   overflow: hidden;
-// }
-// .height {
-//   height: 150px;
-// }
-// .slider--container {
-//   .test {
-//     h3 {
-//       @include intro {
-//         font-size: 5rem;
-//       }
-//     }
-//   }
-// }
-// }
 </style>

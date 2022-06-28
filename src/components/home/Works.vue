@@ -96,6 +96,7 @@ const showCont = (e) => {
 }
 .works {
   padding: 4rem 3%;
+  height: auto;
 }
 .works--title {
   @include flex(space-between);
@@ -158,10 +159,81 @@ const showCont = (e) => {
 }
 .works--list--container {
   position: relative;
-  height: 400px;
 }
 .works--list--items {
   position: relative;
 }
+@media screen and (max-width: 1024px) {
+  .works--list--items {
+  h2 {
+    @include title {
+      font-size: 4rem;
+    }
+  }
+  .works--list--items--year {
+    p {
+      @include movie {
+        color: #000000;
+      }
+    }
+    h5 {
+      @include year {
+        color: #000000;
+      }
+    }
+  }
+}
+}
+@media screen and (max-width: 824px) {
+  .works {
+    padding: 2rem 3%;
+  }
+  .works--list--items {
+    flex-direction: column;
+    align-items: flex-start;
+  h2 {
+    @include title {
+      font-size: 4rem;
+    }
+  }
+  .works--list--items--year {
+    align-items: flex-start;
+    p {
+      @include movie {
+        color: #000000;
+      }
+    }
+    h5 {
+      @include year {
+        color: #000000;
+      }
+    }
+  }
+}
+}
+@media screen and (max-width: 454px) {
+  .works--list--items {
+    flex-direction: column;
+    align-items: flex-start;
+  h2 {
+    @include title {
+      font-size: 2rem;
+    }
+  }
+  .works--list--items--year {
+    align-items: flex-start;
+    p {
+      @include movie {
+        color: #000000;
+      }
+    }
+    h5 {
+      @include year {
+        color: #000000;
+      }
+    }
+  }
+}
+}
 </style>
->
+

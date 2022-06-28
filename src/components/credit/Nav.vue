@@ -146,4 +146,13 @@ nav {
     margin: 0.2rem 0;
   }
 }
+@media screen and (max-width: 600px) {
+  ul {
+  li {
+    @include navtext{
+      font-size: 2rem;
+    }
+  }
+}
+}
 </style>

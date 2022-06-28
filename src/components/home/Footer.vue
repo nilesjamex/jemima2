@@ -121,4 +121,25 @@ export default {};
     }
   }
 }
+@media screen and (max-width: 1024px) {
+   .footer--socials {
+    flex-direction: column;
+    align-items: flex-start;
+    .footer--socials--text {
+    h2 {
+      width: min(752px, 90%);
+      height: auto;
+      @include awards {
+        color: #000000;
+      }
+    }
+  }
+   }
+}
+@media screen and (max-width: 500px) {
+  .social--mail {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
 </style>

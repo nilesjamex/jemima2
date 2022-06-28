@@ -71,4 +71,31 @@ export default {
   border: 1px solid #000000;
   margin: 0rem 0;
 }
+@media screen and (max-width: 1024px) {
+  .awards--list--items {
+  h2 {
+    @include awards {
+      font-size: 3rem;
+    }
+  }
+} 
+}
+@media screen and (max-width: 700px) {
+  .awards--list--items {
+  h2 {
+    @include awards {
+      font-size: 2rem;
+    }
+  }
+} 
+}
+@media screen and (max-width: 450px) {
+  .awards--list--items {
+  h2 {
+    @include awards {
+      font-size: 1.5rem;
+    }
+  }
+} 
+}
 </style>

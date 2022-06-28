@@ -104,8 +104,9 @@ export default {
 }
 .intro--content {
   @include flex(space-between);
+  width: 100%;
   .intro--content--text {
-    width: min(853px, 100%);
+    width: min(853px, 80%);
     p {
       margin-bottom: 1.3rem;
       @include about {
@@ -119,7 +120,7 @@ export default {
       position: absolute;
       z-index: 2;
       right: 6%;
-      bottom: -40%;
+      bottom: 40%;
       width: 112px;
       height: 112px;
       border: 1.5px solid #000000;
@@ -145,8 +146,9 @@ export default {
   }
 }
 .intro--content2 {
-  width: 783px;
+  width: min(95%, 783px);
   .intro--content--text {
+     width: min(853px, 80%);
     h3 {
       margin-bottom: 2rem;
       @include credits {
@@ -158,6 +160,28 @@ export default {
         color: #000000;
       }
     }
+  }
+}
+@media screen and (max-width: 780px) {
+  .intro--content2, .intro--content {
+  width: min(95%, 783px);
+  .intro--content--text {
+    width: 100%;
+    h3 {
+      margin-bottom: 2rem;
+      @include credits {
+        color: #000000;
+      }
+    }
+    p {
+      @include about {
+        font-size: 1rem;
+      }
+    }
+  }
+  .intro--content--link {
+    display: none;
+  }
   }
 }
 </style>

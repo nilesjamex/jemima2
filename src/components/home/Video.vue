@@ -86,4 +86,26 @@ export default {};
     }
   }
 }
+@media screen and (max-width: 1024px) {
+  .video {
+  padding: 1rem 5%;
+  height: 50vh;
+}
+.video--box {
+  width: min(90%, 1210px);
+  margin: 0 auto;
+  position: relative;
+  height: 50vh;
+}
+.video--video {
+  top: 2%;
+  width: 100%;
+  height: 50vh;
+}
+.video--about {
+  @include flex(flex-end, flex-start);
+  height: 53vh;
+  display: none;
+}
+}
 </style>
