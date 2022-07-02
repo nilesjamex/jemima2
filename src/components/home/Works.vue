@@ -164,6 +164,9 @@ const showCont = (e) => {
   position: relative;
 }
 @media screen and (max-width: 1024px) {
+  .img_cont {
+    display: none;
+  }
   .works--list--items {
   h2 {
     @include title {
@@ -217,7 +220,7 @@ const showCont = (e) => {
     align-items: flex-start;
   h2 {
     @include title {
-      font-size: 2rem;
+      font-size: 3rem;
     }
   }
   .works--list--items--year {
@@ -229,7 +232,7 @@ const showCont = (e) => {
     }
     h5 {
       @include year {
-        color: #000000;
+        font-size: 1.7rem;
       }
     }
   }

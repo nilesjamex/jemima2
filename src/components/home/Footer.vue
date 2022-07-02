@@ -141,5 +141,27 @@ export default {};
     flex-direction: column;
     gap: 1rem;
   }
+  .social--mail {
+  flex-direction: column;
+    gap: 1rem;
+  .social--mail--text {
+    h3 {
+      width: 100%;
+      @include socials {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+.footer--socials {
+  .footer--socials--text {
+    width: 100%;
+    h2 {
+      @include awards {
+        color: #000000
+      }
+    }
+  }
+}
 }
 </style>
