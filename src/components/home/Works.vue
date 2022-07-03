@@ -144,6 +144,26 @@ const showCont = (e) => {
   .works--list--items--year {
     @include flex(center, flex-end);
     flex-direction: column;
+    @media screen and (max-width: 769px) {
+      flex-direction: row;
+      justify-content: space-between;
+      background: red;
+      width: 50%;
+      align-items: flex-end;
+      text-align: left;
+       p {
+      @include movie {
+        align-self: center;
+        color: #000000;
+      }
+    }
+    h5 {
+      @include year {
+        color: #000000;
+        font-size: 1.7rem;
+      }
+    }
+    }
     text-align: right;
     p {
       @include movie {
@@ -223,19 +243,19 @@ const showCont = (e) => {
       font-size: 3rem;
     }
   }
-  .works--list--items--year {
-    align-items: flex-start;
-    p {
-      @include movie {
-        color: #000000;
-      }
-    }
-    h5 {
-      @include year {
-        font-size: 1.7rem;
-      }
-    }
-  }
+  // .works--list--items--year {
+  //   // align-items: flex-start;
+  //   p {
+  //     @include movie {
+  //       color: #000000;
+  //     }
+  //   }
+  //   h5 {
+  //     @include year {
+  //       font-size: 1.7rem;
+  //     }
+  //   }
+  // }
 }
 }
 </style>
