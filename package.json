@@ -9,6 +9,7 @@
   "dependencies": {
     "core-js": "^3.8.3",
     "gsap": "^3.10.4",
+    "null-responsive-vue": "^1.1.4-alpha",
     "vue": "^3.2.13",
     "vue-marquee-text-component": "^2.0.1",
     "vue-router": "^4.0.3",
