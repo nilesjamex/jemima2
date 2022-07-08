@@ -146,25 +146,24 @@ const showCont = (e) => {
     flex-direction: column;
     @media screen and (max-width: 769px) {
       flex-direction: row;
-      justify-content: space-between;
-      background: red;
-      width: 50%;
+      justify-content: flex-start;
+      gap: 1rem;
+      width: 100%;
       align-items: flex-end;
       text-align: left;
        p {
-      @include movie {
         align-self: center;
+      @include movie {
         color: #000000;
       }
     }
     h5 {
       @include year {
         color: #000000;
-        font-size: 1.7rem;
+        font-size: 2.5rem;
       }
     }
-    }
-    text-align: right;
+  }
     p {
       @include movie {
         color: #000000;
@@ -229,6 +228,7 @@ const showCont = (e) => {
     h5 {
       @include year {
         color: #000000;
+        font-size: 2.5rem;
       }
     }
   }
@@ -252,7 +252,7 @@ const showCont = (e) => {
   //   }
   //   h5 {
   //     @include year {
-  //       font-size: 1.7rem;
+  //       font-size: 2.5rem;
   //     }
   //   }
   // }

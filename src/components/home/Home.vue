@@ -78,6 +78,7 @@ onMounted(() => {
   bottom: 0;
   background-color: #000000;
   overflow: hidden;
+  z-index: 2;
 }
 .cover1 {
   position: fixed;
